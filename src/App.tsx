@@ -1,18 +1,24 @@
 import React from "react";
 import { GlobalStyle } from "./styles/globalStyles";
-import Header from "./components/Header/header";
-import Footer from "./components/Footer/footer";
 import MainSection from "./components/MainSection/mainSection";
+import Layout from "./components/layout";
+import { styled } from "styled-components";
 
-function App() {
+const StyledMainContainer = styled.main`
+  counter-reset: none;
+`;
+
+const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <MainSection />
-      <Footer />
+      <Layout>
+        <StyledMainContainer>
+          <MainSection />
+        </StyledMainContainer>
+      </Layout>
     </>
   );
-}
+};
 
 export default App;

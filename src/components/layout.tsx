@@ -8,6 +8,7 @@ const StyledContent = styled.div`
   flex-direction: column;
   min-height: 100vh;
 `;
+
 const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
     <StyledContent>

@@ -1,8 +1,8 @@
 import React from "react";
 import { GlobalStyle } from "./styles/globalStyles";
-import MainSection from "./components/MainSection/mainSection";
 import Layout from "./components/layout";
 import { styled } from "styled-components";
+import Hero from "./components/Hero/hero";
 
 const StyledMainContainer = styled.main`
   counter-reset: none;
@@ -14,7 +14,7 @@ const App = () => {
       <GlobalStyle />
       <Layout>
         <StyledMainContainer>
-          <MainSection />
+          <Hero />
         </StyledMainContainer>
       </Layout>
     </>

@@ -12,6 +12,7 @@
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
     "@types/react-router-dom": "^5.3.3",
+    "framer-motion": "^11.0.14",
     "holy-loader": "^2.2.10",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",

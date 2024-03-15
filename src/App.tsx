@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 import Hero from "./components/Hero/hero";
 
 const StyledMainContainer = styled.main`
+  border: var(--dev-border);
   counter-reset: none;
 `;
 

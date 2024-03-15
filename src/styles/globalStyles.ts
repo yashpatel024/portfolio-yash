@@ -49,11 +49,11 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--rich-black);
     color: var(--platinum);
     font-family: var(--font-sans);
-    font-size: var(--fz-xl);
+    font-size: var(--fs-xl);
     line-height: 1.3;
 
     @media (max-width: 480px) {
-      font-size: var(--fz-lg);
+      font-size: var(--fs-lg);
     }
 
     &.hidden {
@@ -84,7 +84,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 125px 25px;
       }
 
-      &.fillHeight {
+      /* &.fillHeight {
         padding: 0 150px;
 
         @media (max-width: 1080px) {
@@ -96,7 +96,7 @@ export const GlobalStyle = createGlobalStyle`
         @media (max-width: 480px) {
           padding: 0 25px;
         }
-      }
+      } */
     }
 
     section {

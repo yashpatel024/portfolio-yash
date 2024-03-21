@@ -27,7 +27,7 @@ const variables = css`
     --fs-lg: 18px;
     --fs-xl: 20px;
     --fs-xxl: 22px;
-    --fs-big: 64px;
+    --fs-big: 76px;
     --fs-heading: 32px;
 
     // Development Border

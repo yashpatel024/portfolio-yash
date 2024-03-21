@@ -72,7 +72,7 @@ const Header = () => {
           <ol>
             {navLinks &&
               navLinks.map(({name, hash}, i) => (
-                <li key={i}>
+                <li key={hash}>
                   <a href={hash}>{name}</a>
                 </li>
               ))

@@ -5,14 +5,12 @@ const variables = css`
     // palette: https://coolors.co/palette/0d1b2a-1b263b-415a77-778da9-e0e1dd
     // One more we can use: https://www.awwwards.com/sites/spotify-x-pitchfork-inside-discovery-1#typography
     // Background to Foreground
-    --black: #000;
-    --gray: #9c9c9c;
-    --white: #fff;
-    --rich-black: #0D1B2A;
-    --oxford-blue: #1B263B;
-    --yinmn-blue: #415A77;
-    --silver-lake-blue: #778DA9;
-    --platinum: #E0E1DD;
+    --black: rgba(0, 0, 0, 1);
+    --gray: rgba(118, 118, 118, 1);
+    --white: rgba(255, 255, 255, 1);
+    --light-blue: rgba(82, 110, 255, 1);
+    --background-black: rgba(11, 11, 11, 1);
+    --light-black: rgba(33, 33, 33, 1);
 
     // Import Manual fonts s
     --font-sans: 'Montserrat', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,

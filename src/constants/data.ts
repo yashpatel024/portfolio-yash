@@ -4,16 +4,16 @@ export const navLinks = [
     hash: "#home",
   },
   {
+    name: "About me",
+    hash: "#about",
+  },
+  {
     name: "Experience",
     hash: "#experience",
   },
   {
     name: "Project",
     hash: "#project",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
   },
 ] as const;
 

@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   /* Scrollbar style */
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--oxford-blue) var(--rich-black);
+    scrollbar-color: var(--light-black) var(--background-black);
   }
 
   ::-webkit-scrollbar {
@@ -30,12 +30,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--rich-black);
+    background: var(--background-black);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--oxford-blue);
-    border: 3px solid var(--rich-black);
+    background-color: var(--light-black);
+    border: 3px solid var(--background-black);
     border-radius: 10px;
   }
 
@@ -46,8 +46,8 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--rich-black);
-    color: var(--platinum);
+    background-color: var(--background-black);
+    color: var(--white);
     font-family: var(--font-sans);
     font-size: var(--fs-xl);
     line-height: 1.3;

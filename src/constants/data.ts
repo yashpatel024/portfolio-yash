@@ -1,3 +1,4 @@
+export const ProfileBubbleHeadURL = "https://s3-alpha-sig.figma.com/img/79a0/4c3d/f1016e22eeb17690c9787b384cd471e6?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iyLYKwel5nyzSUOMOb0XSLvkTj3cgqXKh~SzWmp9A09iUq5bt4xZxCdCD9X1abRLEidABc5qO0hqH~d5YXxBXk8edB92FM6KNLC2~NEjQqSEX1bYYzDk3KI2J~APFkJ6osDfGMhurGKuSW1xoYA8X3t3FZM1cEvmHhAlGj5CNb81laZEAVwtH83rFLujTnyxtKEyZs5uBEJiZwnfbMThpb2cuR-ddKmyXSnWq3138nqrrfguDQNHDG4t8fG7RoXRcYNfFaxgZJdLs0j6sHC01~VeaUWLpwI9KuX~FFPuJzeA1gxEwRGdx52i2DDX7THJ5mwcz1OheWN1JQa87qA6qA__" as const;
 export const navLinks = [
   {
     name: "Home",

@@ -2,13 +2,14 @@ import React from "react";
 import { GlobalStyle } from "./styles/globalStyles";
 import Layout from "./components/layout";
 import { styled } from "styled-components";
-import Hero from "./components/hero/hero";
-import Experience from "./components/experience/experience";
-import Project from "./components/project/project";
-import Contact from "./components/contact/contact";
+import Hero from "./components/sections/hero";
+import Experience from "./components/sections/experience";
+import Project from "./components/sections/project";
+import Contact from "./components/sections/contact";
+import About from "./components/sections/about";
 
 const StyledMainContainer = styled.main`
-  border: var(--dev-border);
+  /* border: var(--dev-border); */
   counter-reset: none;
 `;
 
@@ -19,6 +20,7 @@ const App = () => {
       <Layout>
         <StyledMainContainer>
           <Hero />
+          <About />
           <Experience />
           <Project />
           <Contact />

@@ -68,12 +68,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     main {
-      margin: 0 auto;
+      margin: 0 250px;
       width: 100%;
-      max-width: 1600px;
+      max-width: 1410px;
       min-height: 100vh;
-      padding: 200px 150px;
-
+      padding: 200px 0;
+      
       @media (max-width: 1080px) {
         padding: 200px 100px;
       }
@@ -102,7 +102,7 @@ export const GlobalStyle = createGlobalStyle`
     section {
       margin: 0 auto;
       padding: 100px 0;
-      max-width: 1400px;
+      max-width: 1410px;
 
       @media (max-width: 768px) {
         padding: 80px 0;

@@ -59,7 +59,7 @@ const words =
 const Hero = (): JSX.Element => {
   return (
     <StyledHeroSection id="hero">
-      <img src="/ assets/images/profileHead.png" alt="Profile Head"/>
+      <img src="/assets/images/profileHead.png" alt="Profile Head"/>
       <h1>Yash Patel</h1>
       <p className="subtext-1">{words}</p>
       <p className="tagline">Crafting Innovative Solutions in Java & JavaScript</p>

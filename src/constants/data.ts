@@ -1,4 +1,3 @@
-export const ProfileBubbleHeadURL = "https://s3-alpha-sig.figma.com/img/79a0/4c3d/f1016e22eeb17690c9787b384cd471e6?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iyLYKwel5nyzSUOMOb0XSLvkTj3cgqXKh~SzWmp9A09iUq5bt4xZxCdCD9X1abRLEidABc5qO0hqH~d5YXxBXk8edB92FM6KNLC2~NEjQqSEX1bYYzDk3KI2J~APFkJ6osDfGMhurGKuSW1xoYA8X3t3FZM1cEvmHhAlGj5CNb81laZEAVwtH83rFLujTnyxtKEyZs5uBEJiZwnfbMThpb2cuR-ddKmyXSnWq3138nqrrfguDQNHDG4t8fG7RoXRcYNfFaxgZJdLs0j6sHC01~VeaUWLpwI9KuX~FFPuJzeA1gxEwRGdx52i2DDX7THJ5mwcz1OheWN1JQa87qA6qA__" as const;
 export const navLinks = [
   {
     name: "Home",
@@ -20,28 +19,40 @@ export const navLinks = [
 
 export const experiencesData = [
   {
-    title: "Software Developer CO-OP",
-    location: "Waterloo, Ontario",
+    id: "agfa-experience",
+    title: "Software Developer",
+    company: "Agfa Healthcare",
+    companyUrl: "https://www.agfa.com/",
+    location: "Waterloo, Canada",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    // icon: React.createElement(LuGraduationCap),
-    date: "Jan 2023 - Apr 2023",
+      "Improved software reliability by 30% through resolving automated test issues and achieved 100% compliance with healthcare standards. Utilized Mockito, JUnit, and Bitbucket for efficient testing and version control. Actively participated in Agile ceremonies and leveraged DevOps tools to streamline development and deployment, ensuring adherence to industry regulations like DICOM, HL7, and FHIR.",
+    icon: "/assets/images/agfa-logo.png",
+    date: "Jan, 2023 - May, 2023",
+    skills: ["Java", "Junit", "Automated tests", "Git",  "Mockito", "Jenkins"]
   },
   {
-    title: "System Engineer",
+    id: "tcs-experience",
+    title: "System Engineer / Developer",
+    company: "Tata Consultancy Services Ltd",
+    companyUrl: "https://www.tcs.com/",
     location: "Mumbai, India",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    // icon: React.createElement(CgWorkAlt),
-    date: "Oct 2020 - Jun 2022",
+      "Led backend development with Java EE, focusing on scalable architectures and secure MySQL databases. Directed Jakarta XML Web Services implementation, integrated Hazelcast Caching for 25% faster load times, and utilized Apache POI for big data management. Developed RESTful APIs, enhanced version control with SVN, and authored comprehensive documentation, ensuring data integrity and seamless user experiences.",
+    icon: "/assets/images/tcs-logo.png",
+    date: "Oct, 2020 - Jun, 2022",
+    skills: ["Java", "React", "MySQL", "REST APIs", "Git", "Back-end"]
   },
   {
-    title: "Business Analysts Intern",
+    id: "evosys-experience",
+    title: "BI Developer",
+    company: "Evosys",
+    companyUrl: "https://www.evosysglobal.com/",
     location: "Ahmedabad, India",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    // icon: React.createElement(FaReact),
-    date: "May 2019 - Jul 2019",
+      "As a Business Intelligence Developer Intern at Evolutionary Systems in 2019, collaboratively developed a Digital Assistant deployed on Google Assistant, leveraging Oracle's infrastructure. Utilizing DialogFlow's popularity, integrated Google services like translation and digital assistants into a chatbot solution, identifying new service offerings the company could provide to potential customers.",
+    icon: "/assets/images/evosys-logo.png",
+    date: "May, 2019 - Jul, 2019",
+    skills: ["JavaScript", "Python", "SaaS", "Node.js", "Chatbot", "Oracle"]
   },
 ] as const;
 

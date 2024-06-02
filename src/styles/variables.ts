@@ -11,7 +11,10 @@ const variables = css`
     --light-blue: rgba(82, 110, 255, 1);
     --background-black: rgba(11, 11, 11, 1);
     --light-black: rgba(33, 33, 33, 1);
-
+    --box-color-1: #F5F378;
+    --box-color-2: #DCC1FF;
+    --box-color-3: #FFFFFF;
+    
     // Import Manual fonts s
     --font-sans: 'Montserrat', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
@@ -25,7 +28,8 @@ const variables = css`
     --fs-lg: 18px;
     --fs-xl: 20px;
     --fs-xxl: 24px;
-    --fs-xxxl: 70px;
+    --fs-xxxl: 30px;
+    --fs-4xl: 70px;
     --fs-big: 76px;
     --fs-heading: 32px;
 
@@ -45,6 +49,10 @@ const variables = css`
       font-weight: 600;
       color: var(--lightest-slate);
       line-height: 1.1;
+    }
+
+    p {
+      margin:0;
     }
   }
 `;

@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { ProfileBubbleHeadURL } from "../../constants/data";
 
 const StyledHeroSection = styled.section`
   /* border: var(--dev-border); */

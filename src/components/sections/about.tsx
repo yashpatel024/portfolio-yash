@@ -78,7 +78,7 @@ const StyledInfoSection = styled.div`
     background-color: var(--black);
     justify-content: space-around;
     align-items: center;
-    gap:5%;
+    gap: 5%;
 
     .profile-image {
       position: relative;
@@ -89,7 +89,7 @@ const StyledInfoSection = styled.div`
       display: flex;
       justify-content: center;
 
-      img{
+      img {
         position: absolute;
         width: 125%;
         height: 130%;
@@ -132,11 +132,13 @@ const About = (): JSX.Element => {
             <img
               className="profile-image"
               src="/assets/images/profile-photo.png"
+              alt="displays face of yash"
             />
           </div>
           <img
             className="black-matter-image"
             src="/assets/images/black-matter-gif.gif"
+            alt="gif of black matter"
           />
         </div>
         <p>

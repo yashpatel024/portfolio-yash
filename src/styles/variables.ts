@@ -29,7 +29,9 @@ const variables = css`
     --fs-xl: 20px;
     --fs-xxl: 24px;
     --fs-xxxl: 30px;
-    --fs-4xl: 70px;
+    --fs-4xl: 36px;
+    --fs-5xl: 42px;
+    --fs-xbig: 70px;
     --fs-big: 76px;
     --fs-heading: 32px;
 

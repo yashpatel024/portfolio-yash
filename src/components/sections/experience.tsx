@@ -7,7 +7,7 @@ const StyledExperienceSection = styled.section`
   display: flex;
   position: relative;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
   font-style: normal;
@@ -15,12 +15,13 @@ const StyledExperienceSection = styled.section`
   padding: 0px 0;
   gap: 100px;
   position: relative;
-  padding-bottom: 5%;
+  padding: 0px 0;
+  padding-top: 12%;
   gap: 80px;
 
   h2 {
     font-family: var(--font-sans);
-    font-size: clamp(var(--fs-xxl), 3vw, var(--fs-4xl));
+    font-size: clamp(var(--fs-xxl), 3vw, var(--fs-xbig));
     font-weight: 500;
     color: var(--white);
     display: flex;

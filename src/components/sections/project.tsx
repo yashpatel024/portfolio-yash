@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import LinkArrow from "../icons/linkArrow";
+import GithubIcon from "../icons/githubIcon";
 
 const StyledProjectSection = styled.section`
   border: var(--dev-border);
@@ -80,6 +82,63 @@ const StyledProjects = styled.div`
         position: relative;
         gap: 15px;
       }
+
+      .project-links {
+        display: flex;
+        position: relative;
+        width: 100%;
+
+        .link {
+          display: flex;
+          flex-direction: row;
+          position: relative;
+          justify-content: flex-start;
+
+          .link-circle {
+            display: flex;
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            justify-content: center;
+            z-index: 5;
+
+            svg,
+            .icon-circle {
+              position: absolute;
+              width: 50%;
+              height: 40%;
+              z-index: 6;
+              display: flex;
+              justify-content: center;
+              align-self: center;
+            }
+
+            .icon-circle {
+              background-image: url("/assets/images/github-icon.png"),
+                linear-gradient(to right, white, white);
+              background-size: 75px, 85%;
+              background-position: center, center;
+              background-repeat: no-repeat;
+            }
+          }
+
+          .arrow-icon {
+            position: absolute;
+            left: 70%;
+          }
+
+          .link-circle:nth-child(1) {
+            background-color: black;
+            border: 1px solid white;
+          }
+
+          .link-circle:nth-child(2) {
+            position: absolute;
+            background-color: white;
+          }
+        }
+      }
     }
 
     .project-images {
@@ -118,6 +177,16 @@ const Project = () => {
                 technology to visualize company performance data and the
                 collaborative performance of the team.
               </p>
+            </div>
+            <div className="project-links">
+              <div className="link">
+                <div className="link-circle">
+                  <div className="icon-circle"></div>
+                </div>
+                <div className="link-circle arrow-icon">
+                  <LinkArrow />
+                </div>
+              </div>
             </div>
           </div>
           <div className="project-images"></div>

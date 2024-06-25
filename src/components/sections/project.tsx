@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import LinkArrow from "../icons/linkArrow";
-import GithubIcon from "../icons/githubIcon";
 
 const StyledProjectSection = styled.section`
-  border: var(--dev-border);
+  /* border: var(--dev-border); */
   display: flex;
   position: relative;
   flex-direction: column;
@@ -34,6 +33,7 @@ const StyledProjects = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  gap: 30vh;
 
   .project-card {
     position: relative;
@@ -81,6 +81,7 @@ const StyledProjects = styled.div`
         flex-direction: column;
         position: relative;
         gap: 15px;
+        text-align: justify;
       }
 
       .project-links {
@@ -114,7 +115,13 @@ const StyledProjects = styled.div`
               align-self: center;
             }
 
-            .icon-circle {
+            .figma {
+              background-image: url("/assets/images/figma-icon.png");
+              background-size: 15px;
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+            .github {
               background-image: url("/assets/images/github-icon.png"),
                 linear-gradient(to right, white, white);
               background-size: 75px, 85%;
@@ -126,6 +133,7 @@ const StyledProjects = styled.div`
           .arrow-icon {
             position: absolute;
             left: 70%;
+            cursor: pointer;
           }
 
           .link-circle:nth-child(1) {
@@ -144,7 +152,22 @@ const StyledProjects = styled.div`
     .project-images {
       position: relative;
       width: 55%;
+
+      img {
+        position: relative;
+        width: 100%;
+      }
+
+      .skill-tags {
+        display: flex;
+        align-items: flex-end;
+      }
     }
+  }
+
+  .project-card:nth-of-type(even) {
+    display: flex;
+    flex-direction: row-reverse;
   }
 `;
 
@@ -181,7 +204,7 @@ const Project = () => {
             <div className="project-links">
               <div className="link">
                 <div className="link-circle">
-                  <div className="icon-circle"></div>
+                  <div className="icon-circle figma"></div>
                 </div>
                 <div className="link-circle arrow-icon">
                   <LinkArrow />
@@ -189,7 +212,56 @@ const Project = () => {
               </div>
             </div>
           </div>
-          <div className="project-images"></div>
+          <div className="project-images">
+            <img
+              src="/assets/images/projects/bad.png"
+              alt="Business Analytical Dashboard collage"
+            />
+          </div>
+        </div>
+        <div className="project-card">
+          <div className="project-details">
+            <h3>Wander Mission- Travel beyond your imagination</h3>
+            <div className="skill-tags">
+              <p>MERN</p>
+              <p>JavaScript</p>
+              <p>NodeJs</p>
+              <p>Redux.js</p>
+              <p>AWS RDS</p>
+              <p>MySQL</p>
+              <p>Leadership </p>
+              <p>Mongoose</p>
+            </div>
+            <div className="project-description">
+              <p>
+                Engineered a scalable travel platform with MongoDB and Amazon
+                RDS, showcasing familiarity with AWS services and NoSQL
+                databases, focusing on agile development and leveraging
+                libraries like MaterialUI, Redux, and Mongoose to ensure robust
+                functionality.
+              </p>
+              <p>
+                Utilized Redux for state management and Mongoose for MongoDB
+                interaction, ensuring efficient data handling and persistence.
+              </p>
+            </div>
+            <div className="project-links">
+              <div className="link">
+                <div className="link-circle">
+                  <div className="icon-circle github"></div>
+                </div>
+                <div className="link-circle arrow-icon">
+                  <LinkArrow />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="project-images">
+            <img
+              src="/assets/images/projects/WM.png"
+              alt="Wander Mission MERN Project collage"
+            />
+          </div>
         </div>
       </StyledProjects>
     </StyledProjectSection>

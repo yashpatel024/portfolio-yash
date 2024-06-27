@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import LinkArrow from "../icons/linkArrow";
+import { handleURLButtonClick } from "../../functions/global";
 
 const StyledProjectSection = styled.section`
   /* border: var(--dev-border); */
@@ -12,8 +13,8 @@ const StyledProjectSection = styled.section`
   min-height: 100vh;
   font-style: normal;
   line-height: normal;
-  padding: 0px 0;
-  padding-top: 12%;
+  padding: 12% 0;
+  /* padding-top: 12%; */
   gap: 100px;
   position: relative;
 
@@ -134,6 +135,11 @@ const StyledProjects = styled.div`
             position: absolute;
             left: 70%;
             cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+              transform: translate(0, -5%);
+            }
           }
 
           .link-circle:nth-child(1) {
@@ -206,7 +212,13 @@ const Project = () => {
                 <div className="link-circle">
                   <div className="icon-circle figma"></div>
                 </div>
-                <div className="link-circle arrow-icon">
+                <div
+                  className="link-circle arrow-icon"
+                  onClick={handleURLButtonClick(
+                    "https://www.figma.com/design/F1t3BCpGlyDdVksOQhrQXI/Capstone-Presentation?node-id=29-29&t=aJ5gflohi2F3ymD0-1",
+                    true
+                  )}
+                >
                   <LinkArrow />
                 </div>
               </div>
@@ -250,7 +262,13 @@ const Project = () => {
                 <div className="link-circle">
                   <div className="icon-circle github"></div>
                 </div>
-                <div className="link-circle arrow-icon">
+                <div
+                  className="link-circle arrow-icon"
+                  onClick={handleURLButtonClick(
+                    "https://github.com/yashpatel024/WanderMission-Travel-beyond-your-imagination",
+                    true
+                  )}
+                >
                   <LinkArrow />
                 </div>
               </div>

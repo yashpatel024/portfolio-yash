@@ -72,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
       width: 100%;
       max-width: 1410px;
       min-height: 100vh;
-      padding: 200px 0;
+      padding: 200px 0 0 0;
       
       @media (max-width: 1080px) {
         padding: 200px 100px;

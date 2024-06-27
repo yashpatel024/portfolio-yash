@@ -88,6 +88,11 @@ const StyledLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  svg {
+    height: 36px;
+    width: 35px;
+  }
 `;
 
 const HeaderLogo = () => {

@@ -39,7 +39,7 @@ export const experiencesData = [
     description:
       "Led backend development with Java EE, focusing on scalable architectures and secure MySQL databases. Directed Jakarta XML Web Services implementation, integrated Hazelcast Caching for 25% faster load times, and utilized Apache POI for big data management. Developed RESTful APIs, enhanced version control with SVN, and authored comprehensive documentation, ensuring data integrity and seamless user experiences.",
     icon: "/assets/images/tcs-logo.png",
-    date: "Oct, 2020 - Jun, 2022",
+    date: "Jun, 2020 - Jun, 2022",
     skills: ["Java", "React", "MySQL", "REST APIs", "Git", "Back-end"]
   },
   {

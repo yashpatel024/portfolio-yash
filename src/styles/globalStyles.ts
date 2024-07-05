@@ -47,6 +47,7 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: var(--background-black);
+
     color: var(--white);
     font-family: var(--font-sans);
     font-size: var(--fs-xl);

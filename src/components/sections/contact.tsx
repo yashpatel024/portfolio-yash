@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import IconLogo from "../icons/logo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faArrowUp, faAt } from "@fortawesome/free-solid-svg-icons";
-import { handleURLButtonClick } from "../../functions/global";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import IconLogo from '../icons/logo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUp, faAt, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { handleURLButtonClick } from '../../functions/global';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import { databases } from '../../appwrite';
+import { ID } from 'appwrite';
 
 const StyledContactSection = styled.section`
   /* border: var(--dev-border); */
@@ -79,7 +83,7 @@ const StyledContactSection = styled.section`
         gap: 0;
         align-items: center;
 
-        input[type="email"] {
+        input[type='email'] {
           border: none;
           border-bottom: 2px solid var(--light-black);
           font-weight: 500;
@@ -126,36 +130,103 @@ const StyledContactSection = styled.section`
 
 // Contact Form which Handles event of submitting form
 const ContactForm = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
+  const [open, setOpen] = useState(false); // for Snackbar Component
+  const [errorMessage, setErrorMessage] = useState(''); // for Snackbar Component
 
   const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 
-  const handleContactForm = (e: any) => {
-    e.preventDefault();
-    if(email === "") {
-      alert("Don't leave it empty");
+  // Handles snackbar open/close
+  const handleClick = (message: string, resetEmail: boolean = true) => {
+    setEmail(resetEmail ? '' : email);
+    setErrorMessage(message);
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === 'clickaway') {
+      return;
     }
 
-    if (!emailRegex.test(email)) {
-      alert("Please correct the Email Address");
+    setOpen(false);
+  };
+
+  // For snackbar action - Close button
+  const action = (
+    <React.Fragment>
+      <IconButton
+        size='small'
+        aria-label='close'
+        color='inherit'
+        onClick={handleClose}
+      >
+        <FontAwesomeIcon icon={faXmark} />
+        {/* <CloseIcon fontSize='small' /> */}
+      </IconButton>
+    </React.Fragment>
+  );
+
+  // Handles form submission
+  const handleContactForm = async (e: any) => {
+    e.preventDefault();
+    if (email === '') {
+      handleClick('Please fill email', false);
+      return;
+    } else if (!emailRegex.test(email)) {
+      handleClick('Please correct the Email Address', false);
+      return;
     }
-    
-    setEmail("");
+
+    // Sends request to Appwrite
+    try {
+      const response = await databases.createDocument(
+        process.env.REACT_APP_APPWRITE_DATABASE_ID!,
+        process.env.REACT_APP_APPWRITE_COLLECTION_ID!,
+        ID.unique(),
+        {
+          email_id: email,
+        }
+      );
+
+      // On success, show success message
+      if (response.$id.length > 0) {
+        handleClick(`Thanks for contacting me, ${response.email_id}.`);
+      }
+    } catch (error: any) {
+      // On error, show error message - 409 means email already exists
+      if (error.code === 409) {
+        handleClick('Thank you for contacting me. I already got your email.');
+      } else {
+        handleClick('Something went wrong.');
+      }
+    }
   };
 
   return (
     <form onSubmit={handleContactForm}>
+      {/* Snackbar/Toast to show error message */}
+      <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        open={open}
+        autoHideDuration={3000}
+        onClose={handleClose}
+        message={errorMessage}
+        action={action}
+      />
       <p>Stay connected w/ me.</p>
-      <div className="email-div">
+      <div className='email-div'>
         <input
-          type="email"
-          name="emailId"
+          type='email'
+          name='emailId'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email Address"
+          placeholder='Email Address'
         />
         <FontAwesomeIcon
-          className="icon"
+          className='icon'
           icon={faArrowUp}
           onClick={handleContactForm}
         />
@@ -166,45 +237,45 @@ const ContactForm = () => {
 
 const Contact = () => {
   return (
-    <StyledContactSection id="contact">
-      <div className="left-panel">
-        <div className="contact-logo">
+    <StyledContactSection id='contact'>
+      <div className='left-panel'>
+        <div className='contact-logo'>
           <IconLogo />
         </div>
         <p>Yash Patel</p>
       </div>
-      <div className="vertical-separator" />
-      <div className="right-panel">
-        <div className="contact-form">
+      <div className='vertical-separator' />
+      <div className='right-panel'>
+        <div className='contact-form'>
           <ContactForm />
         </div>
-        <div className="socials">
+        <div className='socials'>
           <div
-            className="social-pin"
+            className='social-pin'
             onClick={handleURLButtonClick(
-              "https://www.linkedin.com/in/yash-patel-dev/",
+              'https://www.linkedin.com/in/yash-patel-dev/',
               true
             )}
           >
-            <FontAwesomeIcon className="icon" icon={faLinkedinIn} />
+            <FontAwesomeIcon className='icon' icon={faLinkedinIn} />
           </div>
           <div
-            className="social-pin"
+            className='social-pin'
             onClick={handleURLButtonClick(
-              "https://www.linkedin.com/in/yash-patel-dev/",
+              'https://www.linkedin.com/in/yash-patel-dev/',
               true
             )}
           >
-            <FontAwesomeIcon className="icon" icon={faGithub} />
+            <FontAwesomeIcon className='icon' icon={faGithub} />
           </div>
           <div
-            className="social-pin"
+            className='social-pin'
             onClick={handleURLButtonClick(
-              "https://www.linkedin.com/in/yash-patel-dev/",
+              'https://www.linkedin.com/in/yash-patel-dev/',
               true
             )}
           >
-            <FontAwesomeIcon className="icon" icon={faAt} />
+            <FontAwesomeIcon className='icon' icon={faAt} />
           </div>
         </div>
       </div>

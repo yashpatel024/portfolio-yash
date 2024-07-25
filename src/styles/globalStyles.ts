@@ -76,13 +76,13 @@ export const GlobalStyle = createGlobalStyle`
       padding: 200px 0 0 0;
       
       @media (max-width: 1080px) {
-        padding: 200px 100px;
+        padding: 200px 0;
       }
       @media (max-width: 768px) {
-        padding: 150px 50px;
+        padding: 150px 0;
       }
       @media (max-width: 480px) {
-        padding: 125px 25px;
+        padding: 125px 0;
       }
 
       /* &.fillHeight {

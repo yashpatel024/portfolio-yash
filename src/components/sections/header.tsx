@@ -1,7 +1,10 @@
-import React from "react";
-import { styled } from "styled-components";
-import { navLinks } from "../../constants/data";
-import IconLogo from "../icons/logo";
+import React from 'react';
+import { styled } from 'styled-components';
+import { navLinks } from '../../constants/data';
+import IconLogo from '../icons/logo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { handleURLButtonClick } from "../../functions/global";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -98,15 +101,49 @@ const StyledLogo = styled.div`
 const HeaderLogo = () => {
   return (
     <StyledLogo>
-      <IconLogo />
+      <a href='#home'>
+        <IconLogo />
+      </a>
     </StyledLogo>
   );
 };
 
+const StyledContactMeButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 157px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 48px;
+  background-color: var(--light-blue);
+
+  .contact-me-button {
+    color: var(--white);
+    font-size: var(--fs-md);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .fa-icon {
+    margin-left: 10px;
+  }
+`;
+
 const ContactMeButton = (
-  <a className="contact-me-button" href="#contact">
-    Contact me
-  </a>
+  <StyledContactMeButton
+    className='contact-me-button'
+    onClick={handleURLButtonClick(
+      'https://drive.google.com/file/d/1CKNtDmdphzSVSpy6ZXB2cncLV20qRExa/view?usp=sharing',
+      true
+    )}
+  >
+    <span>Resume</span>
+    <FontAwesomeIcon icon={faPaperPlane} className='fa-icon' />
+  </StyledContactMeButton>
 );
 
 const Header = () => {
@@ -124,7 +161,7 @@ const Header = () => {
               ))}
           </ol>
         </StyledLinks>
-        <div className="nav-button">{ContactMeButton}</div>
+        <div className='nav-button'>{ContactMeButton}</div>
       </StyledNav>
     </StyledHeader>
   );

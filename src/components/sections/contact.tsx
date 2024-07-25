@@ -40,11 +40,11 @@ const StyledContactSection = styled.section`
     justify-content: flex-end;
     gap: 10%;
     position: relative;
-    width: 30%;
+    width: 50%;
 
     .contact-logo {
       position: relative;
-      width: 30%;
+      width: 20%;
     }
 
     p {
@@ -62,7 +62,7 @@ const StyledContactSection = styled.section`
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    width: 69%;
+    width: 50%;
     justify-content: center;
     gap: 15px;
 
@@ -126,6 +126,15 @@ const StyledContactSection = styled.section`
       }
     }
   }
+`;
+
+const StyledVerticalSeparator = styled.div`
+  position: absolute;
+  top: 0;
+  left: -250px;
+  height: 1px;
+  width: 100vw;
+  border-top: 1px solid var(--light-black);
 `;
 
 // Contact Form which Handles event of submitting form
@@ -238,6 +247,7 @@ const ContactForm = () => {
 const Contact = () => {
   return (
     <StyledContactSection id='contact'>
+      <StyledVerticalSeparator />
       <div className='left-panel'>
         <div className='contact-logo'>
           <IconLogo />

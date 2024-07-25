@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -7,8 +7,8 @@ const StyledFooter = styled.footer`
   font-family: var(--font-sans);
   font-size: var(--fs-sm);
   font-weight: 500;
-  
-  span{
+
+  span {
     padding: 0 2px;
   }
 `;
@@ -16,10 +16,13 @@ const StyledFooter = styled.footer`
 const Footer = () => {
   return (
     <StyledFooter>
-      {/* Engineered by 
-      <span>@Yash</span> */}
+      {/* <div>
+        {'Engineered by '}
+        <a href='#home'>Yash&nbsp;</a>
+        {new Date().getFullYear()}
+      </div> */}
     </StyledFooter>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

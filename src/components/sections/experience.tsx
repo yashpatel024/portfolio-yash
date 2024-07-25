@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { experiencesData } from "../../constants/data";
+import React from 'react';
+import styled from 'styled-components';
+import { experiencesData } from '../../constants/data';
 
 const StyledExperienceSection = styled.section`
   /* border: var(--dev-border); */
@@ -145,29 +145,30 @@ const StyledExperience = styled.div`
 `;
 
 const Experience = () => {
+
   return (
-    <StyledExperienceSection id="experience">
+    <StyledExperienceSection id='experience'>
       <h2>Where I’ve Worked</h2>
       <StyledExperience>
         {experiencesData.map((experience) => (
-          <div className="card" id={experience.id}>
-            <div className="card-header">
-              <a href={experience.companyUrl} target="_blank" rel="noreferrer">
+          <div className='card' id={experience.id}>
+            <div className='card-header'>
+              <a href={experience.companyUrl} target='_blank' rel='noreferrer'>
                 <img
-                  className="card-logo"
+                  className='card-logo'
                   src={experience.icon}
-                  alt="Company Logo"
+                  alt='Company Logo'
                 />
               </a>
               <p>{experience.date}</p>
             </div>
-            <div className="card-desc">
-              <h3 className="card-main-title">{experience.title}</h3>
-              <a href={experience.companyUrl} target="_blank" rel="noreferrer">
-                <p className="card-sub-title">{experience.company}</p>
+            <div className='card-desc'>
+              <h3 className='card-main-title'>{experience.title}</h3>
+              <a href={experience.companyUrl} target='_blank' rel='noreferrer'>
+                <p className='card-sub-title'>{experience.company}</p>
               </a>
-              <p className="card-body-text">{experience.description}</p>
-              <div className="card-tags">
+              <p className='card-body-text'>{experience.description}</p>
+              <div className='card-tags'>
                 {experience.skills.map((skill, i) => (
                   <p>{skill}</p>
                 ))}

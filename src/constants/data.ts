@@ -1,8 +1,8 @@
 export const navLinks = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
+  // {
+  //   name: "Home",
+  //   hash: "#home",
+  // },
   {
     name: "About me",
     hash: "#about",
@@ -15,6 +15,10 @@ export const navLinks = [
     name: "Project",
     hash: "#project",
   },
+  {
+    name: "Contact",
+    hash: "#contact",
+  }
 ] as const;
 
 export const experiencesData = [

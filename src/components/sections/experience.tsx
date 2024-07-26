@@ -33,20 +33,23 @@ const StyledExperience = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  height: 550px;
-
+  gap: 6vh;
+  
   .card {
     position: relative;
     display: flex;
     width: 30%;
-    height: 100%;
+    height: clamp(500px, 60vh, 600px);
     border-radius: 30px;
     flex-direction: column;
     padding: 30px;
-    color: var(--black);
+    color: var(--white);
     justify-content: space-between;
+    border: 1px solid var(--white);
+    border-color: var(--light-black);
 
     .card-header {
       display: flex;
@@ -56,15 +59,18 @@ const StyledExperience = styled.div`
 
       img {
         position: relative;
-        width: 70px;
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
+        width: 60px;
+        height: auto;
+        -webkit-filter: grayscale(50%);
+        filter: drop-shadow(5px 5px 10px var(--light-blue)) invert(15%);
+
       }
 
       p {
         font-family: var(--font-sans);
         font-size: var(--fs-md);
         font-weight: 500;
+        color: var(--light-gray);
       }
     }
 
@@ -102,6 +108,7 @@ const StyledExperience = styled.div`
         height: 0;
         visibility: hidden;
         transition: height 2s 0.5s;
+        color: var(--light-white);
       }
 
       .card-tags {
@@ -111,37 +118,40 @@ const StyledExperience = styled.div`
         position: relative;
         width: 85%;
         gap: 5px;
+        color: var(--gray);
 
         p {
           font-family: var(--font-sans);
           font-size: var(--fs-sm);
           font-weight: 500;
-          border: 1px solid var(--black);
+          border: 1px solid var(--gray);
           border-radius: 20px;
           padding: 1px 15px;
         }
       }
     }
+  }
 
-    &:hover {
-      cursor: pointer;
+  .card:hover {
+    box-shadow: 10 10 10px var(--light-black);
 
-      .card-body-text {
-        visibility: visible;
-        height: auto;
-      }
+    .card-body-text {
+      visibility: visible;
+      height: auto;
     }
+
+
   }
 
-  .card:nth-child(1) {
-    background-color: var(--box-color-1);
+  /* .card:nth-child(3n) {
+    border-color: var(--light-blue);
   }
-  .card:nth-child(2) {
-    background-color: var(--box-color-2);
+  .card:nth-child(3n+1) {
+    border-color: var(--light-black);
   }
-  .card:nth-child(3) {
-    background-color: var(--box-color-3);
-  }
+  .card:nth-child(3n+2) {
+    border-color: var(--gray);
+  } */
 `;
 
 const Experience = () => {
@@ -169,8 +179,8 @@ const Experience = () => {
               </a>
               <p className='card-body-text'>{experience.description}</p>
               <div className='card-tags'>
-                {experience.skills.map((skill, i) => (
-                  <p>{skill}</p>
+                {experience.skills && experience.skills.map((skill, i) => (
+                  <p key={i}>{skill}</p>
                 ))}
               </div>
             </div>

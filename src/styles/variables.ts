@@ -7,6 +7,8 @@ const variables = css`
     // Background to Foreground
     --black: rgba(0, 0, 0, 1);
     --gray: rgba(118, 118, 118, 1);
+    --light-gray: rgba(255, 255, 255, 0.5);
+    --light-white: rgba(255, 255, 255, 0.8);
     --white: rgba(255, 255, 255, 1);
     --light-blue: rgba(82, 110, 255, 1);
     --background-black: rgba(11, 11, 11, 1);

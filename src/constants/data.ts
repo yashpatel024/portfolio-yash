@@ -23,8 +23,20 @@ export const navLinks = [
 
 export const experiencesData = [
   {
-    id: "agfa-experience",
+    id: "mmr-experience",
     title: "Software Developer",
+    company: "Match My Roomie",
+    companyUrl: "https://matchmyroomie.com/",
+    location: "Canada",
+    description:
+      "Improved software reliability by 30% through resolving automated test issues and achieved 100% compliance with healthcare standards. Utilized Mockito, JUnit, and Bitbucket for efficient testing and version control. Actively participated in Agile ceremonies and leveraged DevOps tools to streamline development and deployment, ensuring adherence to industry regulations like DICOM, HL7, and FHIR.",
+    icon: "/assets/images/mmr-logo.png",
+    date: "May, 2024 - Present",
+    skills: ["Java", "Junit", "Automated tests", "Git",  "Mockito", "Jenkins"]
+  },
+  {
+    id: "agfa-experience",
+    title: "Software Developer - (CO-OP)",
     company: "Agfa Healthcare",
     companyUrl: "https://www.agfa.com/",
     location: "Waterloo, Canada",
@@ -57,6 +69,18 @@ export const experiencesData = [
     icon: "/assets/images/evosys-logo.png",
     date: "May, 2019 - Jul, 2019",
     skills: ["JavaScript", "Python", "SaaS", "Node.js", "Chatbot", "Oracle"]
+  },
+  {
+    id: "More",
+    title: "Next Adventure?",
+    company: "",
+    companyUrl: "https://www.linkedin.com/in/yash-patel-dev/",
+    location: "Anywhere",
+    description:
+      "I'm always looking for new challenges and opportunities to grow my skills and knowledge. If you're interested in working with me, feel free to reach out to me.",
+    icon: "/assets/images/personal-brand-logo.png",
+    date: "Present - Future",
+    skills: []
   },
 ] as const;
 

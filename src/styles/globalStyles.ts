@@ -61,6 +61,18 @@ export const GlobalStyle = createGlobalStyle`
       overflow: hidden;
     }
 
+    /* For Mobile - blur effect */
+    &.blur {
+      overflow: hidden;
+
+      #home {
+        filter: blur(5px) brightness(0.7);
+        transition: var(--transition);
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+
     #root {
       min-height: 100vh;
       display: grid;

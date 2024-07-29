@@ -4,7 +4,8 @@ import { navLinks } from '../../constants/data';
 import IconLogo from '../icons/logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { handleURLButtonClick } from "../../functions/global";
+import { handleURLButtonClick } from '../../functions/global';
+import MobileMenu from '../extra/mobile-menu';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -14,7 +15,7 @@ const StyledHeader = styled.header`
   top: 0;
   z-index: 11;
   padding: 30px 250px;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   background-color: var(--background-black);
   filter: none !important;
@@ -22,6 +23,13 @@ const StyledHeader = styled.header`
   user-select: auto !important;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--light-black);
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    width: 100vw;
+    height: 100px;
+    background-color: transparent;
+  }
 `;
 
 const StyledNav = styled.nav`
@@ -32,32 +40,6 @@ const StyledNav = styled.nav`
   width: 100%;
   /* counter-reset: item 0; */
   z-index: 12;
-
-  // For Mobile - hamburger Menu
-  @media (max-width: 768px) {
-    display: none;
-  }
-
-  .nav-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 157px;
-    height: 44px;
-    flex-shrink: 0;
-    border-radius: 48px;
-    background-color: var(--light-blue);
-
-    .contact-me-button {
-      color: var(--white);
-      font-size: var(--fs-md);
-      font-family: var(--font-sans);
-      font-weight: 500;
-      line-height: normal;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-  }
 `;
 
 const StyledLinks = styled.div`
@@ -84,6 +66,11 @@ const StyledLinks = styled.div`
         text-align: center;
       }
     }
+
+    // For Mobile
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 `;
 
@@ -98,6 +85,37 @@ const StyledLogo = styled.div`
   }
 `;
 
+const StyledContactMeButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 157px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 48px;
+  background-color: var(--light-blue);
+  font-size: var(--fs-md);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+
+  .contact-me-button {
+    color: var(--white);
+    transition: var(--transition);
+  }
+
+  .fa-icon {
+    margin-left: 10px;
+  }
+
+  // For Mobile - hamburger Menu
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+// Header Logo
 const HeaderLogo = () => {
   return (
     <StyledLogo>
@@ -108,47 +126,27 @@ const HeaderLogo = () => {
   );
 };
 
-const StyledContactMeButton = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 157px;
-  height: 44px;
-  flex-shrink: 0;
-  border-radius: 48px;
-  background-color: var(--light-blue);
+// Contact Me Button
+const ContactMeButton = () => {
+  return (
+    <StyledContactMeButton
+      className='contact-me-button'
+      onClick={handleURLButtonClick(
+        'https://drive.google.com/file/d/1CKNtDmdphzSVSpy6ZXB2cncLV20qRExa/view?usp=sharing',
+        true
+      )}
+    >
+      <span>Resume</span>
+      <FontAwesomeIcon icon={faPaperPlane} className='fa-icon' />
+    </StyledContactMeButton>
+  );
+};
 
-  .contact-me-button {
-    color: var(--white);
-    font-size: var(--fs-md);
-    font-family: var(--font-sans);
-    font-weight: 500;
-    line-height: normal;
-    text-decoration: none;
-    transition: var(--transition);
-  }
-
-  .fa-icon {
-    margin-left: 10px;
-  }
-`;
-
-const ContactMeButton = (
-  <StyledContactMeButton
-    className='contact-me-button'
-    onClick={handleURLButtonClick(
-      'https://drive.google.com/file/d/1CKNtDmdphzSVSpy6ZXB2cncLV20qRExa/view?usp=sharing',
-      true
-    )}
-  >
-    <span>Resume</span>
-    <FontAwesomeIcon icon={faPaperPlane} className='fa-icon' />
-  </StyledContactMeButton>
-);
-
+// Header Component
 const Header = () => {
   return (
     <StyledHeader>
+      {/* Menu for Tab to desktop */}
       <StyledNav>
         <HeaderLogo />
         <StyledLinks>
@@ -161,7 +159,8 @@ const Header = () => {
               ))}
           </ol>
         </StyledLinks>
-        <div className='nav-button'>{ContactMeButton}</div>
+        <ContactMeButton />
+        <MobileMenu />
       </StyledNav>
     </StyledHeader>
   );

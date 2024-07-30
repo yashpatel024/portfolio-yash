@@ -11,8 +11,6 @@ import { databases } from '../../appwrite';
 import { ID } from 'appwrite';
 
 const StyledContactSection = styled.section`
-  /* border: var(--dev-border); */
-
   display: flex;
   position: relative;
   flex-direction: row;
@@ -31,6 +29,10 @@ const StyledContactSection = styled.section`
     width: 1px;
     border: 1px solid var(--light-black);
     margin: 0;
+  }
+
+  hr {
+    display: none;
   }
 
   .left-panel {
@@ -126,6 +128,82 @@ const StyledContactSection = styled.section`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 0px 0;
+    gap: 5vh;
+
+    .vertical-separator {
+      display: none;
+    }
+
+    .left-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10%;
+      position: relative;
+      width: 100%;
+
+      .contact-logo {
+        width: 3.2rem;
+      }
+
+      p {
+        font-size: var(--fs-xxxl);
+      }
+    }
+
+    .right-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      justify-content: center;
+      gap: 15px;
+
+      form {
+        gap: 15px;
+
+        p {
+          font-size: var(--fs-xl);
+        }
+
+        .email-div {
+          gap: 0;
+          align-items: center;
+
+          input[type='email'] {
+            font-size: var(--fs-md);
+            width: 280px;
+          }
+
+          .icon {
+            font-size: var(--fs-lg);
+          }
+        }
+      }
+
+      .socials {
+        width: 100%;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 10px;
+
+        .icon {
+          font-size: 30px;
+          line-height: 60px;
+        }
+      }
+    }
+  }
 `;
 
 const StyledVerticalSeparator = styled.div`
@@ -135,6 +213,11 @@ const StyledVerticalSeparator = styled.div`
   height: 1px;
   width: 100vw;
   border-top: 1px solid var(--light-black);
+
+  @media (max-width: 768px) {
+    left: -25%;
+    width: 150vw;
+  }
 `;
 
 // Contact Form which Handles event of submitting form
@@ -255,6 +338,7 @@ const Contact = () => {
         <p>Yash Patel</p>
       </div>
       <div className='vertical-separator' />
+      <hr />
       <div className='right-panel'>
         <div className='contact-form'>
           <ContactForm />

@@ -122,8 +122,8 @@ const StyledBurgerButton = styled.div`
   position: relative;
   right: 0;
   z-index: 11;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   cursor: pointer;
   display: flex;
   justify-content: center;

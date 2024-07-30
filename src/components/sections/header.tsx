@@ -22,13 +22,15 @@ const StyledHeader = styled.header`
   pointer-events: auto !important;
   user-select: auto !important;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--light-black);
 
   @media (max-width: 768px) {
     padding: 2rem;
     width: 100vw;
-    height: 100px;
+    height: 70px;
     background-color: transparent;
+    border-bottom: 0.5px solid var(--light-black);
   }
 `;
 
@@ -78,10 +80,23 @@ const StyledLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   svg {
     height: 36px;
     width: 35px;
+  }
+
+  // For Mobile
+  @media (max-width: 768px) {
+    svg {
+      height: 28px;
+    }
   }
 `;
 

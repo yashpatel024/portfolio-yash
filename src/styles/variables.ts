@@ -13,10 +13,7 @@ const variables = css`
     --light-blue: rgba(82, 110, 255, 1);
     --background-black: rgba(11, 11, 11, 1);
     --light-black: rgba(33, 33, 33, 1);
-    --box-color-1: #F5F378;
-    --box-color-2: #DCC1FF;
-    --box-color-3: #FFFFFF;
-    
+  
     // Import Manual fonts s
     --font-sans: 'Montserrat', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;

@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components';
 
 const StyledHeroSection = styled.section`
   /* border: var(--dev-border); */
@@ -6,14 +6,9 @@ const StyledHeroSection = styled.section`
   position: relative;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   font-style: normal;
   line-height: normal;
-
-  img {
-    aspect-ratio: 1;
-    max-width: 368px;
-  }
 
   h1 {
     font-family: var(--font-sans);
@@ -28,6 +23,7 @@ const StyledHeroSection = styled.section`
     font-family: var(--font-mono);
     font-size: var(--fs-xxl);
     font-weight: 400;
+    text-align: center;
   }
 
   .tagline {
@@ -54,6 +50,36 @@ const StyledHeroSection = styled.section`
       aspect-ratio: 1;
     }
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+
+    h1 {
+      font-size: clamp(var(--fs-xxxl), var(--fs-4xl), var(--fs-5xl));
+    }
+
+    .subtext-1 {
+      margin: 10px 0 0 0;
+      font-size: var(--fs-sm);
+    }
+
+    .tagline {
+      display: flex;
+      flex-direction: column;
+      word-wrap: break-word;
+      align-items: center;
+      gap: 5px;
+      margin: 20px 0 0 0;
+      font-size: var(--fs-xs);
+      
+    }
+
+    .profile-head-div {
+      width: 14rem;
+      height: 14rem;
+    }
+  }
 `;
 
 const BackgroundBlur = styled.div`
@@ -61,25 +87,27 @@ const BackgroundBlur = styled.div`
   align-self: center;
   margin-bottom: 20%;
   background: var(--light-blue);
-  width: 358px;
-  height: 358px;
-  border-radius: 358px;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 25rem;
   filter: blur(255.4499969482422px);
+  -webkit-filter: blur(255.4499969482422px);
   z-index: -10;
 `;
 
-const words = "Software Developer | Full-stack Enthusiast";
+const words = 'Software Developer | Full-stack Enthusiast';
 
 const Hero = (): JSX.Element => {
   return (
-    <StyledHeroSection id="hero">
-      <div className="profile-head-div">
-        <img src="/assets/images/profileHead.png" alt="Profile Head" />
+    <StyledHeroSection id='hero'>
+      <div className='profile-head-div'>
+        <img src='/assets/images/profileHead.png' alt='Profile Head' />
       </div>
       <h1>Yash Patel</h1>
-      <p className="subtext-1">{words}</p>
-      <p className="tagline">
-        Crafting Innovative Solutions in Java & JavaScript
+      <p className='subtext-1'>{words}</p>
+      <p className='tagline'>
+        <span>Crafting Innovative Solutions in </span>
+        <span>Java & JavaScript </span>
       </p>
       <BackgroundBlur />
     </StyledHeroSection>

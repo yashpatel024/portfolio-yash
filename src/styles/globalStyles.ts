@@ -81,48 +81,35 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     main {
-      margin: 0 250px;
       width: 100%;
-      max-width: 1410px;
       min-height: 100vh;
-      padding: 200px 0 0 0;
+      padding: 200px 250px 0 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
       
-      @media (max-width: 1080px) {
-        padding: 200px 0;
-      }
       @media (max-width: 768px) {
-        padding: 150px 0;
+        padding: 150px 0 0 0;
       }
       @media (max-width: 480px) {
-        padding: 125px 0;
+        padding: 100px 0 0 0;
       }
-
-      /* &.fillHeight {
-        padding: 0 150px;
-
-        @media (max-width: 1080px) {
-          padding: 0 100px;
-        }
-        @media (max-width: 768px) {
-          padding: 0 50px;
-        }
-        @media (max-width: 480px) {
-          padding: 0 25px;
-        }
-      } */
     }
 
     section {
       margin: 0 auto;
       padding: 100px 0;
-      max-width: 1410px;
+      max-width: 100vw;
 
       @media (max-width: 768px) {
-        padding: 80px 0;
+        padding: 2rem 0;
+        max-width: 100vw;
       }
 
       @media (max-width: 480px) {
-        padding: 60px 0;
+        padding: 2rem 0;
+        max-width: 100vw;
       }
     }
   }

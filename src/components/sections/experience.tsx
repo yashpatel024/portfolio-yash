@@ -177,6 +177,7 @@ const StyledExperience = styled.div`
       }
 
       .card-desc {
+        gap: 0.4rem;
         .card-main-title {
           font-size: var(--fs-lg);
         }
@@ -187,6 +188,8 @@ const StyledExperience = styled.div`
 
         .card-body-text {
           font-size: var(--fs-sm);
+          visibility: visible;
+          height: auto;
         }
 
         .card-tags {
@@ -198,15 +201,6 @@ const StyledExperience = styled.div`
             border-radius: 10px;
           }
         }
-      }
-    }
-
-    .card:hover {
-      box-shadow: 10 10 10px var(--light-black);
-
-      .card-body-text {
-        visibility: visible;
-        height: auto;
       }
     }
   }

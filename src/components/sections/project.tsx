@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import LinkArrow from "../icons/linkArrow";
-import { handleURLButtonClick } from "../../functions/global";
+import React from 'react';
+import styled from 'styled-components';
+import LinkArrow from '../icons/linkArrow';
+import { handleURLButtonClick } from '../../functions/global';
 
 const StyledProjectSection = styled.section`
   /* border: var(--dev-border); */
@@ -26,6 +26,17 @@ const StyledProjectSection = styled.section`
     display: flex;
     align-self: flex-end;
   }
+
+  @media (max-width: 768px) {
+    padding: 100px 0;
+    gap: 2rem;
+    justify-content: center;
+
+    h2 {
+      font-size: clamp(var(--fs-xxl), var(--fs-xxxl), var(--fs-4xl));
+      margin: 0;
+    }
+  }
 `;
 
 const StyledProjects = styled.div`
@@ -35,6 +46,7 @@ const StyledProjects = styled.div`
   justify-content: space-between;
   width: 100%;
   gap: 30vh;
+  counter-reset: project-number;
 
   .project-card {
     position: relative;
@@ -55,6 +67,11 @@ const StyledProjects = styled.div`
         font-size: var(--fs-4xl);
         font-weight: 500;
         margin: 0;
+
+        &::before {
+          counter-increment: project-number;
+          content: counter(project-number) '. ';
+        }
       }
 
       .skill-tags {
@@ -68,7 +85,7 @@ const StyledProjects = styled.div`
         p {
           font-family: var(--font-mono);
           font-size: var(--fs-xl);
-          font-weight: 3 0;
+          font-weight: 300;
           border: 1px solid var(--white);
           border-radius: 20px;
           padding: 5px 10px;
@@ -117,13 +134,13 @@ const StyledProjects = styled.div`
             }
 
             .figma {
-              background-image: url("/assets/images/figma-icon.png");
+              background-image: url('/assets/images/figma-icon.png');
               background-size: 15px;
               background-position: center;
               background-repeat: no-repeat;
             }
             .github {
-              background-image: url("/assets/images/github-icon.png"),
+              background-image: url('/assets/images/github-icon.png'),
                 linear-gradient(to right, white, white);
               background-size: 75px, 85%;
               background-position: center, center;
@@ -163,11 +180,6 @@ const StyledProjects = styled.div`
         position: relative;
         width: 100%;
       }
-
-      .skill-tags {
-        display: flex;
-        align-items: flex-end;
-      }
     }
   }
 
@@ -175,17 +187,104 @@ const StyledProjects = styled.div`
     display: flex;
     flex-direction: row-reverse;
   }
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+    width: 100%;
+    gap: 5vh;
+
+    .project-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 15px;
+
+      .project-details {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
+        h3 {
+          order: 1;
+          font-size: var(--fs-lg);
+          margin: 0;
+          line-height: normal;
+        }
+
+        .skill-tags {
+          order: 3;
+          width: 100%;
+          gap: 10px;
+
+          p {
+            font-size: var(--fs-xxs);
+            border: 1px solid var(--white);
+            border-radius: 20px;
+            padding: 5px 10px;
+          }
+        }
+
+        .project-description {
+          order: 2;
+          font-size: var(--fs-sm);
+          gap: 5px;
+        }
+
+        .project-links {
+          order: 4;
+          display: flex;
+          position: relative;
+          width: 100%;
+          
+          .link {
+            
+            .link-circle {
+              width: 45px;
+              height: 45px;
+
+              svg,
+              .icon-circle {
+                width: 50%;
+                height: 40%;
+              }
+
+              .figma {
+                background-size: 12px;
+              }
+
+              .github {
+                background-size: 55px, 85%;
+              }
+            }
+          }
+        }
+      }
+
+      .project-images {
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    .project-card:nth-of-type(even) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 
 const Project = () => {
   return (
-    <StyledProjectSection id="project">
+    <StyledProjectSection id='project'>
       <h2>A Collection of Work</h2>
       <StyledProjects>
-        <div className="project-card">
-          <div className="project-details">
+        <div className='project-card'>
+          <div className='project-details'>
             <h3>Business Analytical Dashboard</h3>
-            <div className="skill-tags">
+            <div className='skill-tags'>
               <p>TypeScript</p>
               <p>ReactJs</p>
               <p>NodeJs</p>
@@ -195,7 +294,7 @@ const Project = () => {
               <p>NoSQL</p>
               <p>CRON</p>
             </div>
-            <div className="project-description">
+            <div className='project-description'>
               <p>
                 Led the Capstone Project to develop an analytics dashboard using
                 the MERN stack deployed over Firebase creating a robust,
@@ -207,15 +306,15 @@ const Project = () => {
                 collaborative performance of the team.
               </p>
             </div>
-            <div className="project-links">
-              <div className="link">
-                <div className="link-circle">
-                  <div className="icon-circle figma"></div>
+            <div className='project-links'>
+              <div className='link'>
+                <div className='link-circle'>
+                  <div className='icon-circle figma'></div>
                 </div>
                 <div
-                  className="link-circle arrow-icon"
+                  className='link-circle arrow-icon'
                   onClick={handleURLButtonClick(
-                    "https://www.figma.com/design/F1t3BCpGlyDdVksOQhrQXI/Capstone-Presentation?node-id=29-29&t=aJ5gflohi2F3ymD0-1",
+                    'https://www.figma.com/design/F1t3BCpGlyDdVksOQhrQXI/Capstone-Presentation?node-id=29-29&t=aJ5gflohi2F3ymD0-1',
                     true
                   )}
                 >
@@ -224,17 +323,17 @@ const Project = () => {
               </div>
             </div>
           </div>
-          <div className="project-images">
+          <div className='project-images'>
             <img
-              src="/assets/images/projects/bad.png"
-              alt="Business Analytical Dashboard collage"
+              src='/assets/images/projects/bad.png'
+              alt='Business Analytical Dashboard collage'
             />
           </div>
         </div>
-        <div className="project-card">
-          <div className="project-details">
+        <div className='project-card'>
+          <div className='project-details'>
             <h3>Wander Mission- Travel beyond your imagination</h3>
-            <div className="skill-tags">
+            <div className='skill-tags'>
               <p>MERN</p>
               <p>JavaScript</p>
               <p>NodeJs</p>
@@ -244,7 +343,7 @@ const Project = () => {
               <p>Leadership </p>
               <p>Mongoose</p>
             </div>
-            <div className="project-description">
+            <div className='project-description'>
               <p>
                 Engineered a scalable travel platform with MongoDB and Amazon
                 RDS, showcasing familiarity with AWS services and NoSQL
@@ -257,15 +356,15 @@ const Project = () => {
                 interaction, ensuring efficient data handling and persistence.
               </p>
             </div>
-            <div className="project-links">
-              <div className="link">
-                <div className="link-circle">
-                  <div className="icon-circle github"></div>
+            <div className='project-links'>
+              <div className='link'>
+                <div className='link-circle'>
+                  <div className='icon-circle github'></div>
                 </div>
                 <div
-                  className="link-circle arrow-icon"
+                  className='link-circle arrow-icon'
                   onClick={handleURLButtonClick(
-                    "https://github.com/yashpatel024/WanderMission-Travel-beyond-your-imagination",
+                    'https://github.com/yashpatel024/WanderMission-Travel-beyond-your-imagination',
                     true
                   )}
                 >
@@ -274,10 +373,10 @@ const Project = () => {
               </div>
             </div>
           </div>
-          <div className="project-images">
+          <div className='project-images'>
             <img
-              src="/assets/images/projects/WM.png"
-              alt="Wander Mission MERN Project collage"
+              src='/assets/images/projects/WM.png'
+              alt='Wander Mission MERN Project collage'
             />
           </div>
         </div>

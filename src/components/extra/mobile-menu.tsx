@@ -16,7 +16,7 @@ const StyledHamburgerMenu = styled.div`
 
   justify-content: center;
   align-items: center;
-  font-size: var(--fs-xxxl);
+  font-size: var(--fs-4xl);
   cursor: pointer;
   z-index: 11;
 
@@ -38,13 +38,21 @@ const StyledHamburgerMenu = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
     background-color: var(--background-black);
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--light-black);
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--fs-xxxl);
+
+    .menu-container{
+      gap: 40px;
+    }
   }
 `;
 
@@ -58,12 +66,12 @@ const StyledLinks = styled.div`
     padding: 0;
     margin: 0;
     list-style: none;
-    gap: 40px;
+    gap: 50px;
 
     li {
       position: relative;
       /* counter-increment: item 1; */
-      font-size: var(--fs-xl);
+      font-size: var(--fs-xxl);
 
       a {
         /* padding: 35px; */
@@ -75,18 +83,23 @@ const StyledLinks = styled.div`
       }
     }
   }
+
+  @media (max-width: 480px) {
+    gap: 40px;
+    font-size: var(--fs-xl);
+  }
 `;
 
 const StyledContactMeButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
-  height: 50px;
+  width: 210px;
+  height: 65px;
   flex-shrink: 0;
   border-radius: 48px;
   background-color: var(--light-blue);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-xxl);
   font-family: var(--font-sans);
   font-weight: 500;
   line-height: normal;
@@ -99,6 +112,12 @@ const StyledContactMeButton = styled.a`
 
   .fa-icon {
     margin-left: 10px;
+  }
+
+  @media (max-width: 480px) {
+    width: 170px;
+    height: 50px;
+    font-size: var(--fs-xl);
   }
 `;
 
@@ -122,8 +141,8 @@ const StyledBurgerButton = styled.div`
   position: relative;
   right: 0;
   z-index: 11;
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -139,7 +158,7 @@ const StyledBurgerButton = styled.div`
       content: '';
       display: block;
       height: 2px;
-      width: 50%;
+      width: 60%;
       margin: 0;
       display: flex;
       align-self: flex-end;
@@ -166,6 +185,20 @@ const StyledBurgerButton = styled.div`
     &::before {
       transform: rotate(-45deg);
       top: -2px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 55px;
+    height: 55px;
+
+    .burger {
+      width: 100%;
+      &::before,
+      &::after {
+        height: 2px;
+        width: 50%;
+      }
     }
   }
 `;

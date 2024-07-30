@@ -12,7 +12,7 @@ const StyledHeroSection = styled.section`
 
   h1 {
     font-family: var(--font-sans);
-    font-size: clamp(var(--fs-xxl), 5vw, var(--fs-big));
+    font-size: clamp(var(--fs-5xl), var(--fs-xbig), var(--fs-big));
     font-weight: 700;
     color: var(--white);
   }
@@ -21,7 +21,7 @@ const StyledHeroSection = styled.section`
     margin: 10px 0 0 0;
     color: var(--white);
     font-family: var(--font-mono);
-    font-size: var(--fs-xxl);
+    font-size: clamp(var(--fs-xxl), var(--fs-xxxl), var(--fs-4xl));;
     font-weight: 400;
     text-align: center;
   }
@@ -30,8 +30,11 @@ const StyledHeroSection = styled.section`
     margin: 24px 0 0 0;
     color: var(--white);
     font-family: var(--font-mono);
-    font-size: var(--fs-md);
+    font-size: clamp(var(--fs-md), var(--fs-lg), var(--fs-xl));;;
     font-weight: 300;
+    align-items: center;
+    word-wrap: break-word;
+
   }
 
   .profile-head-div {
@@ -50,10 +53,23 @@ const StyledHeroSection = styled.section`
       aspect-ratio: 1;
     }
   }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     display: flex;
     justify-content: center;
+    min-height: calc(100vh - 90px);
+
+    .tagline {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 20px 0 0 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 70px);
 
     h1 {
       font-size: clamp(var(--fs-xxxl), var(--fs-4xl), var(--fs-5xl));
@@ -68,7 +84,6 @@ const StyledHeroSection = styled.section`
       display: flex;
       flex-direction: column;
       word-wrap: break-word;
-      align-items: center;
       gap: 5px;
       margin: 20px 0 0 0;
       font-size: var(--fs-xs);

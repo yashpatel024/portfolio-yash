@@ -29,10 +29,10 @@ export const experiencesData = [
     companyUrl: "https://matchmyroomie.com/",
     location: "Canada",
     description:
-      "Improved software reliability by 30% through resolving automated test issues and achieved 100% compliance with healthcare standards. Utilized Mockito, JUnit, and Bitbucket for efficient testing and version control. Actively participated in Agile ceremonies and leveraged DevOps tools to streamline development and deployment, ensuring adherence to industry regulations like DICOM, HL7, and FHIR.",
+      "• Spearheaded the development and maintenance of the company's website, initially using WordPress for static hosting on AWS and later transitioning to Next.js deployed over Azure for improved performance and scalability. Implemented AppWrite as a Backend-as-a-Service (BaaS) solution, reducing backend development time by 60% and improving overall system scalability. Engineered a cross-platform mobile application using React Native, enabling the company to reach both iOS and Android users with a single codebase, resulting in a 50% reduction in development costs.",
     icon: "/assets/images/mmr-logo.png",
     date: "May, 2024 - Present",
-    skills: ["Java", "Junit", "Automated tests", "Git",  "Mockito", "Jenkins"]
+    skills: ["Next.js", "React Native", "Azure", "Git",  "BaaS", "TailwindCSS"]
   },
   {
     id: "agfa-experience",
@@ -107,25 +107,3 @@ export const experiencesData = [
 //     // imageUrl: wordanalyticsImg,
 //   },
 // ] as const;
-
-export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
-] as const;

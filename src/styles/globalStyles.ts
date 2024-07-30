@@ -83,15 +83,20 @@ export const GlobalStyle = createGlobalStyle`
     main {
       width: 100%;
       min-height: 100vh;
-      padding: 200px 250px 0 250px;
+      padding: 200px 15% 0 15%;
       display: flex;
       flex-direction: column;
       align-items: center;
       overflow-x: hidden;
       
-      @media (max-width: 768px) {
-        padding: 150px 0 0 0;
+      @media (max-width: 1080px) {
+        padding: 150px 10% 0 10%;
       }
+
+      @media (max-width: 768px) {
+        padding: 150px 8% 0 8%;
+      }
+
       @media (max-width: 480px) {
         padding: 100px 6% 0 6%;
       }

@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   z-index: 11;
-  padding: 30px 250px;
+  padding: 30px 15%;
   width: 100vw;
   height: 100px;
   background-color: var(--background-black);
@@ -25,9 +25,18 @@ const StyledHeader = styled.header`
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--light-black);
 
+  @media (max-width: 1080px) {
+    padding: 2rem 10%;
+    height: 90px;
+  }
+
   @media (max-width: 768px) {
+    padding: 2rem 8%;
+    height: 85px;
+  }
+
+  @media (max-width: 420px) {
     padding: 2rem;
-    width: 100vw;
     height: 70px;
     background-color: transparent;
     border-bottom: 0.5px solid var(--light-black);
@@ -69,6 +78,12 @@ const StyledLinks = styled.div`
       }
     }
 
+    @media (max-width: 1080px) {
+      li {
+        padding: 0px 25px;
+      }
+    }
+
     // For Mobile
     @media (max-width: 768px) {
       display: none;
@@ -80,7 +95,7 @@ const StyledLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   a {
     display: flex;
     justify-content: center;
@@ -92,8 +107,15 @@ const StyledLogo = styled.div`
     width: 35px;
   }
 
-  // For Mobile
+  // For Max-Mobile
   @media (max-width: 768px) {
+    svg {
+      height: 35px;
+    }
+  }
+
+  // For Mobile
+  @media (max-width: 480px) {
     svg {
       height: 28px;
     }

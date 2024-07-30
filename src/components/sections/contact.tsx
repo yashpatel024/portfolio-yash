@@ -54,7 +54,7 @@ const StyledContactSection = styled.section`
       width: 30%;
       font-weight: 700;
       font-size: var(--fs-5xl);
-      word-wrap: break-word;
+      word-wrap: normal;
     }
   }
 
@@ -125,6 +125,40 @@ const StyledContactSection = styled.section`
         &:hover {
           transform: translate(0, -10%);
         }
+      }
+    }
+  }
+  @media (max-width: 1080px) {
+    display: flex;
+    flex-direction: row;
+    min-height: 40vh;
+    gap: 5vh;
+
+    .right-panel {
+      align-items: center;
+      gap: 15px;
+
+      form {
+
+        p {
+          font-size: var(--fs-xxl);
+        }
+
+        .email-div {
+          gap: 5px;
+
+          input[type='email'] {
+            font-size: var(--fs-lg);
+          }
+
+          .icon {
+            font-size: var(--fs-xl);
+          }
+        }
+      }
+
+      .socials {
+        margin-top: 10px;
       }
     }
   }
@@ -209,10 +243,15 @@ const StyledContactSection = styled.section`
 const StyledVerticalSeparator = styled.div`
   position: absolute;
   top: 0;
-  left: -250px;
+  left: -45vw;
   height: 1px;
-  width: 100vw;
+  width: 150vw;
   border-top: 1px solid var(--light-black);
+
+  @media (max-width: 1080px) {
+    left: -20%;
+    width: 150vw;
+  }
 
   @media (max-width: 768px) {
     left: -25%;

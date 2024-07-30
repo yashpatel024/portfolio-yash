@@ -27,6 +27,17 @@ const StyledProjectSection = styled.section`
     align-self: flex-end;
   }
 
+  @media (max-width: 1080px) {
+    padding: 150px 0;
+    gap: 3rem;
+    justify-content: center;
+
+    h2 {
+      font-size: clamp(var(--fs-xxxl), var(--fs-4xl), var(--fs-5xl));
+      margin: 0;
+    }
+  }
+  
   @media (max-width: 768px) {
     padding: 100px 0;
     gap: 2rem;
@@ -188,7 +199,7 @@ const StyledProjects = styled.div`
     flex-direction: row-reverse;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     justify-content: space-between;
     width: 100%;
     gap: 5vh;

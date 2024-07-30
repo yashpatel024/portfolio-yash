@@ -26,10 +26,18 @@ const StyledAboutSection = styled.section`
     background-color: var(--light-black);
     margin: 0;
   }
+  
+  @media (max-width: 1080px) {
+    padding: 90px 0 0 0;
+  }
 
   @media (max-width: 768px) {
+    padding: 85px 0 0 0;
+  }
+
+  @media (max-width: 480px) {
     min-height: 100vh;
-    padding: 100px 0 0 0;
+    padding: 70px 0 0 0;
     gap: 2rem;
     justify-content: center;
   }
@@ -46,7 +54,7 @@ const StyledTagline = styled.div`
     margin: 0px;
     color: var(--white);
     font-family: var(--font-sans);
-    font-size: var(--fs-big);
+    font-size: clamp(var(--fs-5xl), var(--fs-xbig), var(--fs-big));;
     font-weight: 500;
     word-wrap: normal;
     width: fit-content;
@@ -67,7 +75,28 @@ const StyledTagline = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+      margin: 0px;
+      font-size: clamp(var(--fs-4xl), var(--fs-5xl), var(--fs-xbig));
+    }
+
+    .second-tagline {
+      svg {
+        margin-left: 5px;
+        top: -8px;
+        height: 1.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
     width: 100%;
     height: 30%;
     display: flex;
@@ -173,6 +202,51 @@ const StyledInfoSection = styled.div`
   }
 
   @media (max-width: 768px) {
+    height: fit-content;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 45px;
+
+    .profile-image-div {
+      width: 80%;
+      border-radius: 100px;
+      
+      .profile-image {
+        position: relative;
+        width: 80px;
+        height: 95px;
+
+        img {
+          position: absolute;
+          width: 125%;
+          height: 130%;
+          top: 10px;
+        }
+      }
+    }
+
+    .profile-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 20px;
+
+      p {
+        display: flex;
+        word-wrap: normal;
+        width: 100%;
+        font-size: clamp(var(--fs-lg), var(--fs-xl), var(--fs-xxl));
+      }
+
+      .socials {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
     position: relative;
     width: 100%;
     height: fit-content;
@@ -203,23 +277,7 @@ const StyledInfoSection = styled.div`
     }
 
     .profile-description {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
       gap: 10px;
-
-      p {
-        display: flex;
-        word-wrap: normal;
-        width: 100%;
-        font-size: clamp(var(--fs-md), var(--fs-lg), var(--fs-xl));
-      }
-
-      .socials {
-        width: 100%;
-      }
     }
   }
 `;

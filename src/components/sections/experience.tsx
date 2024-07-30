@@ -12,12 +12,11 @@ const StyledExperienceSection = styled.section`
   min-height: 100vh;
   font-style: normal;
   line-height: normal;
-  padding: 0px 0;
   gap: 100px;
   position: relative;
   padding: 0px 0;
-  padding-top: 12%;
-  gap: 80px;
+  padding-top: 15%;
+  gap: 50px;
 
   h2 {
     font-family: var(--font-sans);
@@ -28,7 +27,18 @@ const StyledExperienceSection = styled.section`
     align-self: flex-start;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
+    padding: 150px 0 0 0;
+    gap: 3rem;
+    justify-content: center;
+
+    h2 {
+      font-size: clamp(var(--fs-xxxl), var(--fs-4xl), var(--fs-5xl));
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
     padding: 100px 0 0 0;
     gap: 2rem;
     justify-content: center;
@@ -47,7 +57,7 @@ const StyledExperience = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 6vh;
+  gap: 2vw;
 
   .card {
     position: relative;
@@ -92,7 +102,7 @@ const StyledExperience = styled.div`
 
       .card-main-title {
         font-family: var(--font-sans);
-        font-size: var(--fs-xxxl);
+        font-size: clamp(var(--fs-xl), var(--fs-xxl), var(--fs-xxxl));
         font-weight: 700;
         margin: 0;
       }
@@ -148,6 +158,61 @@ const StyledExperience = styled.div`
     .card-body-text {
       visibility: visible;
       height: auto;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    .card {
+      position: relative;
+      display: flex;
+      width: 45%;
+      height: clamp(500px, 50vh, 550px);
+      padding: 25px;
+
+      .card-header {
+        img {
+          width: 50px;
+        }
+
+        p {
+          font-size: var(--fs-sm);
+        }
+      }
+
+      .card-desc {
+        gap: 0.4rem;
+        
+        .card-main-title {
+          font-size: var(--fs-lg);
+        }
+
+        .card-sub-title {
+          font-size: var(--fs-md);
+        }
+
+        .card-body-text {
+          font-size: var(--fs-sm);
+          visibility: visible;
+          height: auto;
+        }
+
+        .card-tags {
+          width: 100%;
+          gap: 7px;
+
+          p {
+            font-size: var(--fs-xs);
+            border-radius: 10px;
+          }
+        }
+      }
     }
   }
 

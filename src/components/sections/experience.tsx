@@ -27,6 +27,17 @@ const StyledExperienceSection = styled.section`
     display: flex;
     align-self: flex-start;
   }
+
+  @media (max-width: 768px) {
+    padding: 100px 0 0 0;
+    gap: 2rem;
+    justify-content: center;
+
+    h2 {
+      font-size: clamp(var(--fs-xxl), var(--fs-xxxl), var(--fs-4xl));
+      margin: 0;
+    }
+  }
 `;
 
 const StyledExperience = styled.div`
@@ -37,7 +48,7 @@ const StyledExperience = styled.div`
   justify-content: center;
   width: 100%;
   gap: 6vh;
-  
+
   .card {
     position: relative;
     display: flex;
@@ -63,7 +74,6 @@ const StyledExperience = styled.div`
         height: auto;
         -webkit-filter: grayscale(50%);
         filter: drop-shadow(5px 5px 10px var(--light-blue)) invert(15%);
-
       }
 
       p {
@@ -139,23 +149,70 @@ const StyledExperience = styled.div`
       visibility: visible;
       height: auto;
     }
-
-
   }
 
-  /* .card:nth-child(3n) {
-    border-color: var(--light-blue);
+  @media (max-width: 768px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4vh;
+
+    .card {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: clamp(500px, 40vh, 600px);
+      padding: 25px;
+
+      .card-header {
+        img {
+          width: 50px;
+        }
+
+        p {
+          font-size: var(--fs-sm);
+        }
+      }
+
+      .card-desc {
+        .card-main-title {
+          font-size: var(--fs-lg);
+        }
+
+        .card-sub-title {
+          font-size: var(--fs-md);
+        }
+
+        .card-body-text {
+          font-size: var(--fs-sm);
+        }
+
+        .card-tags {
+          width: 100%;
+          gap: 7px;
+
+          p {
+            font-size: var(--fs-xs);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+    .card:hover {
+      box-shadow: 10 10 10px var(--light-black);
+
+      .card-body-text {
+        visibility: visible;
+        height: auto;
+      }
+    }
   }
-  .card:nth-child(3n+1) {
-    border-color: var(--light-black);
-  }
-  .card:nth-child(3n+2) {
-    border-color: var(--gray);
-  } */
 `;
 
 const Experience = () => {
-
   return (
     <StyledExperienceSection id='experience'>
       <h2>Where I’ve Worked</h2>
@@ -179,9 +236,8 @@ const Experience = () => {
               </a>
               <p className='card-body-text'>{experience.description}</p>
               <div className='card-tags'>
-                {experience.skills && experience.skills.map((skill, i) => (
-                  <p key={i}>{skill}</p>
-                ))}
+                {experience.skills &&
+                  experience.skills.map((skill, i) => <p key={i}>{skill}</p>)}
               </div>
             </div>
           </div>

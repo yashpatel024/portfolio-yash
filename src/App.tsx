@@ -7,6 +7,8 @@ import Experience from "./components/sections/experience";
 import Project from "./components/sections/project";
 import Contact from "./components/sections/contact";
 import About from "./components/sections/about";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const StyledMainContainer = styled.main`
   /* border: var(--dev-border); */
@@ -26,6 +28,10 @@ const App = () => {
           <Contact />
         </StyledMainContainer>
       </Layout>
+
+      {/* Vercel Analytics & Speed Insights */}
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 };

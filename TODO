@@ -1,0 +1,14 @@
+TODO:
+
+1. Make Hero section more fancy and interactive
+2. Work on Making Appwrite Credentials Hidden from Client side: https://trekinbami.medium.com/using-environment-variables-in-react-6b0a99d83cf5
+3. Add Section for "More Projects"
+4. Add List of Skills in About Me Section
+5. Resume files in Domain Side 
+6. Add More Socials in Contact Section
+7. Socials in Fixed position, can view any time
+8. More Animations on interactive elements - Framer Motion, GSAP
+9. Increase SEO - Passive an active SEO
+10. More back links to other pages - Behance, Dribbble, Instagram, etc
+11. More Projects in Subdomain - Live Projects
+12. Analytics - Vercel Analytics

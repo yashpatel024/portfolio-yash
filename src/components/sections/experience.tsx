@@ -35,6 +35,7 @@ const StyledExperienceSection = styled.section`
     h2 {
       font-size: clamp(var(--fs-xxxl), var(--fs-4xl), var(--fs-5xl));
       margin: 0;
+      align-self: center;
     }
   }
 
@@ -78,12 +79,22 @@ const StyledExperience = styled.div`
       justify-content: space-between;
       align-items: center;
 
-      img {
+      .card-logo {
         position: relative;
         width: 60px;
         height: auto;
-        -webkit-filter: grayscale(50%);
-        filter: drop-shadow(5px 5px 10px var(--light-blue)) invert(15%);
+        z-index: 3;
+      }
+
+      .card-logo-shadow {
+        position: absolute;
+        z-index: -1;
+        width: 40px;
+        height: auto;
+        -webkit-filter: blur(20px);
+        filter: blur(20px);
+        left: 40px;
+        top: 40px;
       }
 
       p {
@@ -177,8 +188,14 @@ const StyledExperience = styled.div`
       padding: 25px;
 
       .card-header {
-        img {
+        .card-logo {
           width: 50px;
+        }
+
+        .card-logo-shadow {
+          width: 30px;
+          left: 30px;
+          top: 30px;
         }
 
         p {
@@ -188,7 +205,7 @@ const StyledExperience = styled.div`
 
       .card-desc {
         gap: 0.4rem;
-        
+
         .card-main-title {
           font-size: var(--fs-lg);
         }
@@ -282,6 +299,11 @@ const Experience = () => {
               <a href={experience.companyUrl} target='_blank' rel='noreferrer'>
                 <img
                   className='card-logo'
+                  src={experience.icon}
+                  alt='Company Logo'
+                />
+                <img
+                  className='card-logo-shadow'
                   src={experience.icon}
                   alt='Company Logo'
                 />

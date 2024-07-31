@@ -35,6 +35,7 @@ const StyledProjectSection = styled.section`
     h2 {
       font-size: clamp(var(--fs-xxxl), var(--fs-4xl), var(--fs-5xl));
       margin: 0;
+      align-self: center;
     }
   }
   
@@ -202,7 +203,7 @@ const StyledProjects = styled.div`
   @media (max-width: 1080px) {
     justify-content: space-between;
     width: 100%;
-    gap: 5vh;
+    gap: 10vh;
 
     .project-card {
       position: relative;

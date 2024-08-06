@@ -15,7 +15,7 @@
 
 - ⚡ Fun fact **I can optimize database queries faster than I can decide what to have for lunch!**
 
-<h3 align="left">Connect with me:</h3>
+<h3 align="left">Ping me here:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/yash-patel-dev" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="yash-patel-dev" height="30" width="40" /></a>
 <a href="https://www.leetcode.com/butcherofblaviken" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="butcherofblaviken" height="30" width="40" /></a>

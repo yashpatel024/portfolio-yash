@@ -331,7 +331,7 @@ const About = (): JSX.Element => {
             <div
               className='social-pin'
               onClick={handleURLButtonClick(
-                'https://www.linkedin.com/in/yash-patel-dev/',
+                'https://github.com/yashpatel024',
                 true
               )}
             >
@@ -340,7 +340,7 @@ const About = (): JSX.Element => {
             <div
               className='social-pin'
               onClick={handleURLButtonClick(
-                'https://www.linkedin.com/in/yash-patel-dev/',
+                'mailto:yashpatel.dev.ca@outlook.com',
                 true
               )}
             >

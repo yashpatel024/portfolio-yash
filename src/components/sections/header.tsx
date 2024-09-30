@@ -151,7 +151,7 @@ const Header = () => {
         </StyledLinks>
         <ContactButton
           text='Resume'
-          url='https://drive.google.com/file/d/1CKNtDmdphzSVSpy6ZXB2cncLV20qRExa/view?usp=sharing'
+          url='https://drive.google.com/file/d/1DK6NxO7E3IFn5dZper-9Z2wD09vDTkQN/view?usp=drive_link'
           icon={faPaperPlane}
         />
         <MobileMenu />
